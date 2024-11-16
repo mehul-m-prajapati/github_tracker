@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1.5s ease-in-out;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .about-content h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .about-section-title {
+            text-align: center;
+            padding: 15px;
+            background: #ff6f61;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .about-section-title:hover {
+            background-color: #ff4a33;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .about-content a {
+            font-size: 1.1rem;
+            color: #ff6f61;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .about-content a:hover {
+            color: #ff4a33;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 48%;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>About Us</h1>
+    <div class="about-content">
+        <div class="about-section-title">Our Mission</div>
+        <p>We are dedicated to providing the best service to our customers. Our team is committed to quality and excellence in everything we do.</p>
+        
+        <div class="about-section-title">Meet Our Team</div>
+        <div class="team">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Team Member 1">
+                <h3>Sagar Kallimani</h3>
+                <p>CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Team Member 2">
+                <h3>Raj Mishra</h3>
+                <p>CTO</p>
+            </div>
+        </div>
+
+        <div class="about-section-title">Contact Us</div>
+        <p>For more information, feel free to <a href="contact.html">contact us</a>!</p>
+    </div>
+</body>
+</html>
