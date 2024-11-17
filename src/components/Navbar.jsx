@@ -28,14 +28,14 @@ function Navbar() {
 
         {/* Links/Buttons */}
         <div className='hidden sm:flex w-full sm:w-1/2 justify-around sm:justify-end gap-6 mt-4 sm:mt-0'>
-          <NavLink to="/dashboard" className="text-sm sm:text-[24px] p-2 sm:p-[10px] font-normal hover:font-semibold">
+          <NavLink to="/dashboard" className="text-base p-2 sm:p-[10px] font-medium hover:font-semibold">
             Dashboard
           </NavLink>
-          <NavLink to="/dashboard/about" className="text-sm sm:text-[24px] p-2 sm:p-[10px] font-normal hover:font-semibold">
+          <NavLink to="/dashboard/about" className="text-base p-2 sm:p-[10px] font-medium hover:font-semibold">
             About
           </NavLink>
        
-          <NavLink to="/dashboard/contact" className="text-sm sm:text-[24px] p-2 sm:p-[10px] font-normal hover:font-semibold">
+          <NavLink to="/dashboard/contact" className="text-base p-2 sm:p-[10px] font-medium hover:font-semibold">
             Contact Us
           </NavLink>
         </div>
@@ -44,13 +44,13 @@ function Navbar() {
         {isMenuOpen && (
           <div className="absolute top-[60px] bg-gray-600 right-0 w-2/3 shadow-lg p-5 transition-transform duration-300 transform translate-x-0 sm:hidden z-20">
             <nav className="flex flex-col items-start space-y-4">
-              <NavLink onClick={toggleMenu} to="/dashboard" className="text-lg font-medium hover:text-green-500">
+              <NavLink onClick={toggleMenu} to="/dashboard" className="text-base font-medium hover:text-green-500">
                 Dashboard
               </NavLink>
-              <NavLink onClick={toggleMenu} to="/dashboard/about" className="text-lg font-medium hover:text-green-500">
+              <NavLink onClick={toggleMenu} to="/dashboard/about" className="text-base font-medium hover:text-green-500">
                 About
               </NavLink>
-              <NavLink onClick={toggleMenu} to="/dashboard/contact" className="text-lg font-medium hover:text-green-500">
+              <NavLink onClick={toggleMenu} to="/dashboard/contact" className="text-base font-medium hover:text-green-500">
                 Contact Us
               </NavLink>
 
