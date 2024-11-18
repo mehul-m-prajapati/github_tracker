@@ -1,63 +1,94 @@
-// src/components/Navbar.jsx
-
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useState } from "react";
-import { IoIosMenu, IoMdClose } from "react-icons/io";
 
 function Navbar() {
-  const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle menu
+  const [isOpen, setIsOpen] = useState(false);
 
-  function slideToHome() {
-    navigate('/');
-  }
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
   return (
     <nav className="bg-gray-600 text-white shadow-lg">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Brand Name */}
-        <div className="font-bold hover:text-gray-300 cursor-pointer">
-          <p className="sm:text-2xl w-full text-4xl">Github Tracker</p>
-          <button onClick={toggleMenu} className='absolute top-6 right-3 sm:hidden'>
-            {isMenuOpen ? <IoMdClose size={30} /> : <IoIosMenu size={30} />}
+        <div className="text-2xl font-bold hover:text-gray-300 cursor-pointer">
+          GitHub Tracker
+        </div>
+
+        <div className="md:hidden mt-3">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative w-8 h-8 flex flex-col space-y-[5px] items-center group"
+          >
+            <span
+              className={`block h-[3px] w-full bg-white rounded-lg transition-transform duration-300 ${
+                isOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block h-[3px] w-full bg-white rounded-lg transition-opacity duration-300 ${
+                isOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block h-[3px] w-full bg-white rounded-lg transition-transform duration-300 ${
+                isOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
           </button>
         </div>
 
-        {/* Links/Buttons */}
-        <div className='hidden sm:flex w-full sm:w-1/2 justify-around sm:justify-end gap-6 mt-4 sm:mt-0'>
-          <NavLink to="/dashboard" className="text-base p-2 sm:p-[10px] font-medium hover:font-semibold">
-            Dashboard
-          </NavLink>
-          <NavLink to="/dashboard/about" className="text-base p-2 sm:p-[10px] font-medium hover:font-semibold">
+        <div className="hidden md:flex space-x-6">
+          <Link
+            to="/dashboard"
+            className="text-lg font-medium hover:text-gray-300 transition-all"
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className="text-lg font-medium hover:text-gray-300 transition-all"
+          >
             About
-          </NavLink>
-       
-          <NavLink to="/dashboard/contact" className="text-base p-2 sm:p-[10px] font-medium hover:font-semibold">
-            Contact Us
-          </NavLink>
+          </Link>
+          <Link
+            to="/contact"
+            className="text-lg font-medium hover:text-gray-300 transition-all"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/contributors"
+            className="text-lg font-medium hover:text-gray-300 transition-all"
+          >
+            Contributors
+          </Link>
         </div>
-
-        {/* Dropdown Menu for Small Screens */}
-        {isMenuOpen && (
-          <div className="absolute top-[60px] bg-gray-600 right-0 w-2/3 shadow-lg p-5 transition-transform duration-300 transform translate-x-0 sm:hidden z-20">
-            <nav className="flex flex-col items-start space-y-4">
-              <NavLink onClick={toggleMenu} to="/dashboard" className="text-base font-medium hover:text-green-500">
-                Dashboard
-              </NavLink>
-              <NavLink onClick={toggleMenu} to="/dashboard/about" className="text-base font-medium hover:text-green-500">
-                About
-              </NavLink>
-              <NavLink onClick={toggleMenu} to="/dashboard/contact" className="text-base font-medium hover:text-green-500">
-                Contact Us
-              </NavLink>
-
-            </nav>
-          </div>
-        )}
       </div>
+
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="space-y-4 px-6 py-4">
+            <Link
+              to="/dashboard"
+              className="block text-lg font-medium hover:text-gray-300 transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+              </Link>
+            <Link
+              to="/about"
+              className="block text-lg font-medium hover:text-gray-300 transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              About
+              </Link>
+            <Link
+              to='/contact'
+              className="block text-lg font-medium hover:text-gray-300 transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+              </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

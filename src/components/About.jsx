@@ -8,7 +8,7 @@ function About() {
   return (
     <div>
       <div className='text-3xl mt-3 font-semibold flex items-center justify-center'><p>About us</p></div>
-      <div className='px-10 flex flex-col gap-4 py-8'>
+      <div className='sm:px-10 px-6 flex flex-col gap-4 py-6 sm:py-8'>
         <div className='flex flex-col justify-center gap-2'>
           <div className='flex p-3 border-l-4 items-center gap-2 border-gray-500'>
             <AiOutlineAim size={32} />

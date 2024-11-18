@@ -19,8 +19,8 @@ function App() {
 
           {/* Route to the Home (Dashboard) page */}
           <Route path="/dashboard" element={<Home />} />
-          <Route path="/dashboard/contact" element={<Contact />} />
-          <Route path="/dashboard/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
 
         </Routes>
       </main>
