@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home"; // Import the Home (Dashboard) component
 import About from "../pages/About/About"; // Import the About component
 import Contact from "../pages/Contact/Contact"; // Import the Contact component
 import Contributors from "../pages/Contributors/Contributors";
+import Profile from "../pages/Profile/Profile";
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/dashboard" element={<Home />} />
       <Route path="/contributors" element={<Contributors />} />
+      <Route path="/profile" element={<Profile/>}/>
     </Routes>
   );
 };
