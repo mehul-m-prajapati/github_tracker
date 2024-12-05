@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Sun } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -10,7 +10,6 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { useEffect, useState } from "react";
-import { ThemeToggler } from "./theme-toggler";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -94,7 +93,9 @@ const Header = () => {
             </Sheet>
           </div>
           <div className="flex items-center justify-center gap-3 ml-3">
-            <ThemeToggler />
+            <Button variant={"outline"}>
+              <Sun />
+            </Button>
             <Button
               variant={"outline"}
               className="px-5 bg-sky-700 hover:bg-sky-600 text-white hover:text-white"
