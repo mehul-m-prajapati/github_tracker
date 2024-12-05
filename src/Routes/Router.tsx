@@ -6,6 +6,7 @@ import Contact from "../pages/Contact/Contact"; // Import the Contact component
 import Contributors from "../pages/Contributors/Contributors";
 import Landing from "../pages/home";
 import Login from "@/pages/auth/login";
+import Signup from "@/pages/auth/signup";
 
 const Router = () => {
   return (
@@ -16,7 +17,8 @@ const Router = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/home" element={<Home />} />
       <Route path="/contributors" element={<Contributors />} />
-      <Route path="/auth" element={<Login />} />
+      <Route path="/auth/login" element={<Login />} />
+      <Route path="/auth/signup" element={<Signup />} />
     </Routes>
   );
 };

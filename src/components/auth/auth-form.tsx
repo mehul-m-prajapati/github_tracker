@@ -1,24 +1,25 @@
-"use client";
 import { IconBrandGithub } from "@tabler/icons-react";
+import React from "react";
+import { Button } from "../ui/button";
 
-export default function LoginForm() {
+export default function AuthForm({ children }: { children: React.ReactNode }) {
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to Git<span className="text-sky-500">Monitor</span>
       </h2>
-      <div className="flex flex-col my-5 mt-12">
-        <button
-          className=" relative group/btn flex space-x-2 items-center justify-center px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-blue-600 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-          type="submit"
-        >
-          <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-          <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-            GitHub
-          </span>
-          <BottomGradient />
-        </button>
-      </div>
+      <Button variant={"outline"}
+        className="relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)] mt-3"
+        type="submit"
+      >
+        <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+        <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+          GitHub
+        </span>
+        <BottomGradient />
+      </Button>
+      <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+      {children}
     </div>
   );
 }

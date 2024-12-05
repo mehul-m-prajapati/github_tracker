@@ -71,7 +71,7 @@ const Header = () => {
                 variant={"outline"}
                 className="px-5 bg-sky-700 hover:bg-sky-600 text-white"
               >
-                <Link to={"/auth"}>Login</Link>
+                <Link to={"/auth/login"}>Login</Link>
               </Button>
             </div>
           </div>
