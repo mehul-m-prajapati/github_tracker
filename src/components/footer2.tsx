@@ -27,13 +27,13 @@ const Footer_ = () => {
                 <Link to="/about">About Us</Link>
               </li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link to="#">Blog</Link>
               </li>
               <li>
-                <Link to="/terms">Terms of Service</Link>
+                <Link to="#">Terms of Service</Link>
               </li>
               <li>
-                <Link to="/privacy">Privacy Policy</Link>
+                <Link to="#">Privacy Policy</Link>
               </li>
             </ul>
           </div>
@@ -41,7 +41,7 @@ const Footer_ = () => {
             <h4 className="mb-4 text-sm font-semibold uppercase text-slate-400">
               Contact
             </h4>
-            <p className="text-slate-300">support@gitmonitor.io</p>
+            <p className="text-slate-300">support@gitmonitor.com</p>
           </div>
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase text-slate-400">

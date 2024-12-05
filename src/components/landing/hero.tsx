@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 
 const Hero = () => {
@@ -15,8 +16,11 @@ const Hero = () => {
         Track repositories, monitor contributions, and analyze your projects—all
         in one place.
       </p>
-      <Button variant={"outline"} className="bg-sky-700 hover:bg-sky-600 my-4 text-white">
-        Get Started for Free
+      <Button
+        variant={"outline"}
+        className="bg-sky-700 hover:bg-sky-600 my-4 text-white"
+      >
+        <Link to="/auth">Get Started for Free</Link>
       </Button>
       <div className="flex items-center justify-center relative md:pb-40 pb-12">
         <img

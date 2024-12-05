@@ -9,10 +9,27 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   return (
-    <header className="dark:bg-black bg-slate-100 md:px-12 px-4 fixed top-0 w-full shadow-lg z-50 border-b">
+    <header
+      className={`dark:bg-black bg-slate-100 md:px-12 px-4 ${
+        scrolled && "fixed top-0 transition-all duration-300"
+      } w-full shadow-lg z-50 border-b`}
+    >
       <nav className="flex items-center justify-between py-1">
         <Link
           to="/"
@@ -54,7 +71,7 @@ const Header = () => {
                 variant={"outline"}
                 className="px-5 bg-sky-700 hover:bg-sky-600 text-white"
               >
-                Login
+                <Link to={"/auth"}>Login</Link>
               </Button>
             </div>
           </div>
