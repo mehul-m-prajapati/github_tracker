@@ -21,7 +21,7 @@ const Main = () => {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="dark:bg-slate-900/50 bg-slate-200 border-slate-800 shadow-lg hover:shadow-slate-800 transition-all duration-500 dark:shadow-slate-900 shadow-slate-400 hover:scale-105"
+                className="dark:bg-slate-900/50 bg-slate-100 border shadow-lg hover:shadow-slate-800 transition-all duration-500 dark:shadow-slate-900 shadow-slate-400 hover:scale-105"
               >
                 <div className="p-6">
                   <feature.icon className="h-12 w-12 mb-4 text-blue-500" />
@@ -46,7 +46,7 @@ const Main = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="text-center dark:bg-slate-900/50 py-5 px-2 text-wrap rounded-lg shadow-lg hover:scale-105 hover:shadow-slate-800 transition-all duration-500 border"
+                className="text-center dark:bg-slate-900/50 py-5 px-2 text-wrap rounded-lg shadow-lg hover:scale-105 hover:shadow-slate-800 transition-all duration-500 border bg-slate-100"
               >
                 <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-500/45 dark:bg-blue-500/10 text-blue-500">
                   <span className="text-2xl font-bold">{index + 1}</span>

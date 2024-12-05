@@ -18,7 +18,7 @@ const Hero = () => {
       </p>
       <Button
         variant={"outline"}
-        className="bg-sky-700 hover:bg-sky-600 my-4 text-white"
+        className="bg-sky-700 hover:bg-sky-600 my-4 text-white hover:text-white"
       >
         <Link to="/auth/signup">Get Started for Free</Link>
       </Button>
@@ -31,7 +31,7 @@ const Hero = () => {
         <img
           src="/hero2.png"
           alt="GitMonitor-Mobile"
-          className="w-[250px] h-[500px] rounded-xl shadow-md absolute top-0 -right-40 mt-16 shadow-slate-700 max-md:hidden invert dark:invert-0"
+          className="w-[250px] h-[500px] rounded-xl shadow-md absolute top-0 -right-40 mt-16 shadow-slate-700 max-xl:hidden invert dark:invert-0"
         />
       </div>
     </div>

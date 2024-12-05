@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
-import { Menu, Sun } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -45,7 +45,7 @@ const Header = () => {
           />
           Git<span className="text-blue-500">Monitor</span>
         </Link>
-        <div className="flex items-center justify-end gap-4">
+        <div className="flex items-center justify-end gap-2">
           <div className="md:flex items-center justify-end hidden">
             {links.map((link, idx) => (
               <Link
@@ -65,52 +65,43 @@ const Header = () => {
                 )}
               </Link>
             ))}
-            <div className="flex items-center justify-center gap-3 ml-3">
-              <ThemeToggler />
-              <Button
-                variant={"outline"}
-                className="px-5 bg-sky-700 hover:bg-sky-600 text-white"
-              >
-                <Link to={"/auth/login"}>Login</Link>
-              </Button>
-            </div>
           </div>
-        </div>
-        <div className="md:hidden items-center justify-end flex gap-3">
-          <Sheet>
-            <SheetTrigger className="flex items-center justify-center">
-              <Menu />
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
-              </SheetHeader>
-              <div className="flex flex-col">
-                {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className={`text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100  text-sm font-medium flex justify-start  hover:bg-slate-300 dark:hover:bg-slate-900 w-full h-full p-3 rounded-md transition-colors duration-300 ${
-                      window.location.pathname === link.href
-                        ? "bg-slate-300 dark:bg-slate-900"
-                        : ""
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
-          <Button variant={"outline"} className="px-3">
-            <Sun />
-          </Button>
-          <Button
-            variant={"outline"}
-            className="px-5 bg-sky-700 hover:bg-sky-600"
-          >
-            Login
-          </Button>
+          <div className="md:hidden items-center justify-end flex gap-3">
+            <Sheet>
+              <SheetTrigger className="flex items-center justify-center">
+                <Menu />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Menu</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col">
+                  {links.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className={`text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100  text-sm font-medium flex justify-start  hover:bg-slate-300 dark:hover:bg-slate-900 w-full h-full p-3 rounded-md transition-colors duration-300 ${
+                        window.location.pathname === link.href
+                          ? "bg-slate-300 dark:bg-slate-900"
+                          : ""
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+          <div className="flex items-center justify-center gap-3 ml-3">
+            <ThemeToggler />
+            <Button
+              variant={"outline"}
+              className="px-5 bg-sky-700 hover:bg-sky-600 text-white hover:text-white"
+            >
+              <Link to={"/auth/login"}>Login</Link>
+            </Button>
+          </div>
         </div>
       </nav>
     </header>
