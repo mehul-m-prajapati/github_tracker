@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import { Menu, Sun } from "lucide-react";
@@ -13,6 +13,8 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const path = location.pathname;
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -52,7 +54,7 @@ const Header = () => {
               >
                 <span
                   className={`hover:bg-slate-300 dark:hover:bg-slate-900 w-full h-full px-3 py-2 rounded-md transition-colors duration-300 ${
-                    window.location.pathname === link.href &&
+                    path === link.href &&
                     "bg-slate-300 dark:bg-slate-900"
                   }`}
                 >
@@ -91,8 +93,9 @@ const Header = () => {
                     key={link.href}
                     to={link.href}
                     className={`text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100  text-sm font-medium flex justify-start  hover:bg-slate-300 dark:hover:bg-slate-900 w-full h-full p-3 rounded-md transition-colors duration-300 ${
-                      window.location.pathname === link.href &&
-                      "bg-slate-300 dark:bg-slate-900"
+                      window.location.pathname === link.href
+                        ? "bg-slate-300 dark:bg-slate-900"
+                        : ""
                     }`}
                   >
                     {link.label}
