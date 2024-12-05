@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { useEffect, useState } from "react";
+import { ThemeToggler } from "./theme-toggler";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -54,8 +55,7 @@ const Header = () => {
               >
                 <span
                   className={`hover:bg-slate-300 dark:hover:bg-slate-900 w-full h-full px-3 py-2 rounded-md transition-colors duration-300 ${
-                    path === link.href &&
-                    "bg-slate-300 dark:bg-slate-900"
+                    path === link.href && "bg-slate-300 dark:bg-slate-900"
                   }`}
                 >
                   {link.label}
@@ -66,9 +66,7 @@ const Header = () => {
               </Link>
             ))}
             <div className="flex items-center justify-center gap-3 ml-3">
-              <Button variant={"outline"} className="px-3">
-                <Sun />
-              </Button>
+              <ThemeToggler />
               <Button
                 variant={"outline"}
                 className="px-5 bg-sky-700 hover:bg-sky-600 text-white"
