@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ScrollProgressBar = () => {
   const [scrollWidth, setScrollWidth] = useState(0);
@@ -57,7 +57,7 @@ const ScrollProgressBar = () => {
             left: 0,
             width: `${scrollWidth}%`,
             height: "5px", // Thicker line for scroll progress
-            backgroundColor: "grey",
+            backgroundColor: "teal",
             zIndex: 100,
             transition: "width 0.2s ease",
           }}

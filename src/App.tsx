@@ -1,9 +1,8 @@
-
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import ScrollProgressBar from './components/ScrollProgressBar';
 
 import Router from "./Routes/Router";
+import Header from "./components/Header";
+import Footer_ from "./components/footer2";
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
         <ScrollProgressBar/>
 
         {/* Navbar */}
-        <Navbar />
+        <Header />
 
         {/* Main content */}
         <main className="flex-grow">
@@ -20,7 +19,7 @@ function App() {
         </main>
 
         {/* Footer */}
-        <Footer />
+        <Footer_ />
       </div>
 
   );
