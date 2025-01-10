@@ -25,6 +25,7 @@ import {
 import { useGitHubAuth } from "../../hooks/useGitHubAuth";
 import { useGitHubData } from "../../hooks/useGitHubData";
 import { usePagination } from "../../hooks/usePagination";
+import toast from "react-hot-toast";
 
 const ROWS_PER_PAGE = 10;
 
@@ -86,6 +87,7 @@ const Home: React.FC = () => {
   const generateSharableLink = () => {
     const link = `${window.location.origin}/prs/${username}`;
     window.navigator.clipboard.writeText(link);
+    toast.success("link copied to the clipboard");
   };
 
   // Filter data based on selected criteria
