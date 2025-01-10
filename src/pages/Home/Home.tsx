@@ -82,6 +82,12 @@ const Home: React.FC = () => {
     return new Date(dateString).toLocaleDateString();
   };
 
+  // generates the shareable link
+  const generateSharableLink = () => {
+    const link = `${window.location.origin}/prs/${username}`;
+    window.navigator.clipboard.writeText(link);
+  };
+
   // Filter data based on selected criteria
   const filterData = (
     data: GitHubItem[],
@@ -214,6 +220,14 @@ const Home: React.FC = () => {
           <Tab label={`Issues (${filterData(issues, issueFilter).length})`} />
           <Tab label={`Pull Requests (${filterData(prs, prFilter).length})`} />
         </Tabs>
+        <Button
+          variant="contained"
+          className="bg-blue-400"
+          onClick={generateSharableLink}
+          disabled={!username}
+        >
+          Share PRs
+        </Button>
         <FormControl sx={{ minWidth: 150 }}>
           <InputLabel sx={{ fontSize: "14px", color: "#555" }}>State</InputLabel>
           <Select
