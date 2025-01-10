@@ -25,6 +25,7 @@ import {
 import { useGitHubAuth } from "../../hooks/useGitHubAuth";
 import { useGitHubData } from "../../hooks/useGitHubData";
 import { usePagination } from "../../hooks/usePagination";
+import toast from "react-hot-toast";
 
 const ROWS_PER_PAGE = 10;
 
@@ -80,6 +81,13 @@ const Home: React.FC = () => {
   // Format date strings into a readable format
   const formatDate = (dateString: string): string => {
     return new Date(dateString).toLocaleDateString();
+  };
+
+  // generates the shareable link
+  const generateSharableLink = () => {
+    const link = `${window.location.origin}/prs/${username}`;
+    window.navigator.clipboard.writeText(link);
+    toast.success("link copied to the clipboard");
   };
 
   // Filter data based on selected criteria
@@ -214,6 +222,14 @@ const Home: React.FC = () => {
           <Tab label={`Issues (${filterData(issues, issueFilter).length})`} />
           <Tab label={`Pull Requests (${filterData(prs, prFilter).length})`} />
         </Tabs>
+        <Button
+          variant="contained"
+          className="bg-blue-400"
+          onClick={generateSharableLink}
+          disabled={!username}
+        >
+          Share PRs
+        </Button>
         <FormControl sx={{ minWidth: 150 }}>
           <InputLabel sx={{ fontSize: "14px", color: "#555" }}>State</InputLabel>
           <Select
