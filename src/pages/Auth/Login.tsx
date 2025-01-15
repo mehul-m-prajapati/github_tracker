@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   TextField,
   Button,
@@ -39,8 +39,8 @@ const Login: React.FC = () => {
     }
   };
 
-  const handleGithubLogin = () => {
-    console.log("GitHub login");
+  const handleGithubLogin = async () => {
+    window.location.href = `${import.meta.env.VITE_API_URL}/auth/github`;
   };
 
   return (
