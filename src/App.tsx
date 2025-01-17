@@ -16,7 +16,7 @@ function App() {
         <Navbar />
 
         {/* Main content */}
-        <main className="flex-grow bg-gray-100 flex justify-center items-center">
+        <main className="flex-grow bg-gray-50 flex justify-center items-center p-2">
           <Router/>
         </main>
 
@@ -32,7 +32,7 @@ function App() {
           toastOptions={{
             className: 'bg-white',
             duration: 5000,
-            removeDelay: 1000,
+            //removeDelay: 1000,
 
             success: {
               duration: 3000,
